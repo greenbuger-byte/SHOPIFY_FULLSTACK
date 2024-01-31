@@ -17,7 +17,7 @@ shopify.product.list({ fields: "id, title, body_html, images"}).then((result: IP
         .catch((error) => console.error(error))
         .then(() => {
             for (const product of result){
-                const {id: shopify_id, title,body_html, image, images} = product;
+                const {id: shopify_id, title,body_html, images} = product;
                 addProductToDatabase({
                     shopify_id: String(shopify_id),
                     title,
