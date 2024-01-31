@@ -1,0 +1,36 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf dist && npx prisma migrate dev  && npx tsc && node ./dist/src/base/initial_build.js",
+    "start": "node dist/index.js",
+    "dev": "tsc -w & npx prisma migrate dev  && npx tsc & nodemon dist/index.js",
+    "clean": "rimraf dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.9.0",
+    "@shopify/shopify-api": "^9.0.2",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.11",
+    "commander": "^11.1.0",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "graphql": "^16.8.1",
+    "inquirer": "^9.2.13",
+    "nodemon": "^3.0.3",
+    "prisma": "^5.9.0",
+    "rimraf": "^5.0.5",
+    "shopify-api-node": "^3.13.0",
+    "shopify-typed-node-api": "^2.1.1",
+    "sqlite3": "^5.1.7"
+  }
+}
